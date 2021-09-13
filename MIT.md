@@ -1,4 +1,4 @@
-## Copyright 2021, [ Simo Nkosi]
+## Copyright 2021, [ Cyril Iyadi, Simo Nkosi ]
 
 ###### Awesome Books Website
 
