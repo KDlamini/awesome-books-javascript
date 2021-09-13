@@ -40,8 +40,16 @@ function populateTable() {
     td.innerHTML = `<span>${book.title}</span> by ${book.author}`;
 
     const removeButton = document.createElement('button');
-    removeButton.id = 'removeButton';
+    removeButton.className = 'removeButton';
+    removeButton.type = 'button';
     removeButton.innerHTML = 'Remove';
+
+    removeButton.addEventListener('click', (e) => {
+      const title = e.target.parentNode.firstChild.textContent;
+      removeBook(title);
+      saveToLocalStorage();
+      window.location.reload();
+    });
 
     td.appendChild(removeButton);
     tr.appendChild(td);
@@ -60,17 +68,6 @@ form.addEventListener('submit', (e) => {
   populateTable();
   titleInput.value = '';
   authorInput.value = '';
-});
-
-const removeButtonArray = Array.from(document.querySelectorAll('#removeButton'));
-
-removeButtonArray.forEach((removeButton) => {
-  removeButton.addEventListener('click', (e) => {
-    const clickedTd = e.target;
-    console.log(clickedTd);
-    saveToLocalStorage();
-    window.location.reload();
-  });
 });
 
 window.onload = () => {
