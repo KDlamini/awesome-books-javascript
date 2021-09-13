@@ -1,28 +1,25 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Personal Portfolio
+# Awesome Books
 
-> In this project, I will create a personal portfolio. A portfolio website is a key job searching tool for a web developer. In this project, I will precisely replicate one of the *portfolio templates* from Microverse Figma. 
+This project will be a basic website that allows users to add/remove books from a list.
 
-![screenshot](./images/Banner.png)
-![screenshot](./images/Screenshot-projects1.png)
-![screenshot](./images/Screenshot-projects2.png)
-![screenshot](./images/Screenshot-About.png) 
-![screenshot](./images/Screenshot-contact.png)
 
-This project is part of the Microverse curriculum. The main objective is to understand how to parse a Figma design and follow professional guidlines in responsive design.
+This project is part of the Microverse curriculum. The main objective is to understand how to use JavaScript objects and arrays and dynamically modify the DOM and add basic events. This will follow professional guidlines in responsive design.
 
 ## Live Preview
-[https://kdlamini.github.io/portfolio-website/](https://kdlamini.github.io/portfolio-website/)
+[https://kdlamini.github.io/awesome-books-javascript/](https://kdlamini.github.io/awesome-books-javascript/)
 
 ## Built With
 
 - Html/Css
+- JavaScript
 
 ## Additional Tools
 
-- Figma
-- stylelint
+- Webhint
+- Stylelint
+- Eslint
 
 ## Getting Started
 
@@ -30,7 +27,7 @@ To get a local copy of this project:
 
 Clone this repository or download the Zip folder:
 ```
-git clone git@github.com:KDlamini/portfolio-website.git
+git@github.com:KDlamini/awesome-books-javascript.git
 ```  
 
 ## Test
@@ -48,6 +45,10 @@ Track CSS linter errors run:
 ```
 npx stylelint "**/*.{css,scss}"
 ```
+Track JavaScript linter errors run:
+```
+npx eslint .
+```
 
 ## Authors
 
@@ -61,7 +62,7 @@ npx stylelint "**/*.{css,scss}"
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!  
-Feel free to check the [issues page](https://github.com/KDlamini/portfolio-website/issues).
+Feel free to check the [issues page](https://github.com/KDlamini/awesome-books-javascript/issues).
 
 
 ## Show your support
@@ -70,7 +71,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- This project is part of day 4 of module 1 in the Microverse study program.
+- This project is part of week 1 of module 2 in the Microverse study program.
 - Thanks to the Microverse team for the great curriculum.
 - Thanks to Code Reviewers for the insightful feedback.
 - A great thanks to My coding partners, morning session team, and standup team Partners for their contributions.
