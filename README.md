@@ -53,6 +53,8 @@ npx eslint .
 ## Authors
 
 👤 **Cyril Iyadi**
+- GitHub: [@githubhandle](https://github.com/see-why)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/cyril-iyadi-83517270)
 
 👤 **Simo Nkosi**
 
