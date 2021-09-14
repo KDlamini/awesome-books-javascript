@@ -1,25 +1,24 @@
 class AwesomeBooks {
   constructor() {
-    this.bookArray = [],
-    this.book = {
-      title: '',
-      author: '',
-    }
+    this.bookArray = [];
   }
 
-  addBook(title, author) {
+  addBook(booktitle, bookauthor) {
+    const book = {
+      title: booktitle,
+      author: bookauthor,
+    };
+
     let shouldAdd = true;
-    if (title && author) {
+    if (booktitle && bookauthor) {
       this.bookArray.forEach((book) => {
-        if (book.title === title) {
+        if (book.title === booktitle) {
           shouldAdd = false;
         }
       });
-  
+
       if (shouldAdd) {
-        this.book.title = title;
-        this.book.author = author;
-        this.bookArray.push(this.book);
+        this.bookArray.push(book);
       }
     }
   }
@@ -34,25 +33,25 @@ class AwesomeBooks {
 
   populateTable() {
     const tableList = document.getElementById('bookList');
-  
+
     this.bookArray.forEach((book) => {
       const tr = document.createElement('tr');
       const td = document.createElement('td');
-  
-      td.innerHTML = `<span>${this.book.title}</span> by ${this.book.author}`;
-  
+
+      td.innerHTML = `<span>${book.title}</span> by ${book.author}`;
+
       const removeButton = document.createElement('button');
       removeButton.className = 'removeButton';
       removeButton.type = 'button';
       removeButton.innerHTML = 'Remove';
-  
+
       removeButton.addEventListener('click', (e) => {
         const title = e.target.parentNode.firstChild.textContent;
         this.removeBook(title);
         this.saveToLocalStorage();
         window.location.reload();
       });
-  
+
       td.appendChild(removeButton);
       tr.appendChild(td);
       tableList.appendChild(tr);
@@ -68,9 +67,9 @@ class AwesomeBooks {
       const authorInput = document.getElementById('book_author');
       this.addBook(titleInput.value, authorInput.value);
       this.saveToLocalStorage();
-      this.populateTable();
       titleInput.value = '';
       authorInput.value = '';
+      window.location.reload();
     });
   }
 
@@ -84,7 +83,7 @@ class AwesomeBooks {
   }
 }
 
-let books = new AwesomeBooks();
+const books = new AwesomeBooks();
 
 books.handleSubmit();
 books.reloadPage();
