@@ -1,78 +1,89 @@
-let bookArray = [];
+class AwesomeBooks {
+  constructor() {
+    this.bookArray = [];
+  }
 
-const book = {
-  title: '',
-  author: '',
-};
+  addBook(booktitle, bookauthor) {
+    const book = {
+      title: booktitle,
+      author: bookauthor,
+    };
 
-function addBook(title, author) {
-  let shouldAdd = true;
-  if (title && author) {
-    bookArray.forEach((book) => {
-      if (book.title === title) {
-        shouldAdd = false;
+    let shouldAdd = true;
+    if (booktitle && bookauthor) {
+      this.bookArray.forEach((book) => {
+        if (book.title === booktitle) {
+          shouldAdd = false;
+        }
+      });
+
+      if (shouldAdd) {
+        this.bookArray.push(book);
       }
-    });
-
-    if (shouldAdd) {
-      book.title = title;
-      book.author = author;
-      bookArray.push(book);
     }
   }
-}
 
-function removeBook(title) {
-  bookArray = bookArray.filter((book) => book.title !== title);
-}
+  removeBook(title) {
+    this.bookArray = this.bookArray.filter((book) => book.title !== title);
+  }
 
-function saveToLocalStorage() {
-  localStorage.setItem('books', JSON.stringify(bookArray));
-}
+  saveToLocalStorage() {
+    localStorage.setItem('books', JSON.stringify(this.bookArray));
+  }
 
-function populateTable() {
-  const tableList = document.getElementById('bookList');
+  populateTable() {
+    const tableList = document.getElementById('bookList');
 
-  bookArray.forEach((book) => {
-    const tr = document.createElement('tr');
-    const td = document.createElement('td');
+    this.bookArray.forEach((book) => {
+      const tr = document.createElement('tr');
+      const td = document.createElement('td');
 
-    td.innerHTML = `<span>${book.title}</span> by ${book.author}`;
+      td.innerHTML = `<span>${book.title}</span> by ${book.author}`;
 
-    const removeButton = document.createElement('button');
-    removeButton.className = 'removeButton';
-    removeButton.type = 'button';
-    removeButton.innerHTML = 'Remove';
+      const removeButton = document.createElement('button');
+      removeButton.className = 'removeButton';
+      removeButton.type = 'button';
+      removeButton.innerHTML = 'Remove';
 
-    removeButton.addEventListener('click', (e) => {
-      const title = e.target.parentNode.firstChild.textContent;
-      removeBook(title);
-      saveToLocalStorage();
+      removeButton.addEventListener('click', (e) => {
+        const title = e.target.parentNode.firstChild.textContent;
+        this.removeBook(title);
+        this.saveToLocalStorage();
+        window.location.reload();
+      });
+
+      td.appendChild(removeButton);
+      tr.appendChild(td);
+      tableList.appendChild(tr);
+    });
+  }
+
+  handleSubmit() {
+    const form = document.getElementById('form');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const titleInput = document.getElementById('book_title');
+      const authorInput = document.getElementById('book_author');
+      this.addBook(titleInput.value, authorInput.value);
+      this.saveToLocalStorage();
+      titleInput.value = '';
+      authorInput.value = '';
       window.location.reload();
     });
+  }
 
-    td.appendChild(removeButton);
-    tr.appendChild(td);
-    tableList.appendChild(tr);
-  });
+  reloadPage() {
+    window.onload = () => {
+      if (localStorage.getItem('books') !== null) {
+        this.bookArray = JSON.parse(localStorage.getItem('books'));
+        this.populateTable();
+      }
+    };
+  }
 }
 
-const form = document.getElementById('form');
+const books = new AwesomeBooks();
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const titleInput = document.getElementById('book_title');
-  const authorInput = document.getElementById('book_author');
-  addBook(titleInput.value, authorInput.value);
-  saveToLocalStorage();
-  populateTable();
-  titleInput.value = '';
-  authorInput.value = '';
-});
-
-window.onload = () => {
-  if (localStorage.getItem('books') !== null) {
-    bookArray = JSON.parse(localStorage.getItem('books'));
-    populateTable();
-  }
-};
+books.handleSubmit();
+books.reloadPage();
