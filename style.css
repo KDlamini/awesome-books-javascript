@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fff;
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
 .table-entry div,
@@ -13,14 +13,14 @@ body {
   display: flex;
 }
 
-.List-section ,
+.List-section,
 .Add-section,
 .main-content {
   flex-direction: column;
   align-items: center;
 }
 
-.main-content {  
+.main-content {
   justify-content: center;
   width: 100%;
   height: 100vh;
@@ -57,7 +57,7 @@ body {
 }
 
 .List-section-hr {
-  border: 1px solid #778899;
+  border: 1px solid #789;
   width: 40%;
   margin-top: 20px;
 }
@@ -67,16 +67,17 @@ body {
 }
 
 fieldset {
-  border:  none;
+  border: none;
   width: 60%;
 }
 
 .form {
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .form-item {
   margin: 5px 0;
+  height: 30px;
 }
 
 .addButton {
