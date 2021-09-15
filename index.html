@@ -9,6 +9,7 @@
     <title>Awesome Books</title>
 </head>
 <body>
+    <!--
     <header>
         <h1>Awesome Books</h1>
         <nav>
@@ -19,45 +20,29 @@
             </ul>
         </nav>
     </header>    
-    
-    <div>
-        <section id="List-section"> 
+    -->
+
+    <main class="main-content d-flex">
+        <section id="List-section" class="List-section d-flex"> 
             <h2>All awesome books</h2>
-            <table id="bookList">
+            <table id="bookList" class="book-table">
 
             </table>
+            <hr class="List-section-hr">
         </section>
 
-        <section id="Add-section"> 
+        <section id="Add-section" class="Add-section d-flex"> 
             <h2>Add a new book</h2>
 
             <fieldset>
-                <form id="form">
-                    <input type="text" required placeholder="Title" id="book_title">
-                    <input type="text" required placeholder="Author" id="book_author">
+                <form id="form" class="form d-flex">
+                    <input class="form-item" type="text" required placeholder="Title" id="book_title">
+                    <input class="form-item" type="text" required placeholder="Author" id="book_author">
 
-                    <input type="submit" value="Add" id="addButton">
+                    <input class="form-item addButton" type="submit" value="Add" id="addButton">
                 </form>
             </fieldset>
         </section>
-
-        <section id="Contact-section"> 
-            <h2>Contact Information</h2>
-
-            <p>
-                Do you have any questions or you just want to say "Hello"? <br>
-                You can reach out to us!
-            </p>
-
-            <ul>
-                <li>Our eimails: <a href="mailto:iyadicy@gmail.com">iyadicy@gmail.com</a>   </li>
-                <li>Our phone numbers: +2348032784186 </li>
-                <li>Our address: Streetname 22, 84503 City, Country.</li>
-            </ul>
-        </section>
-    </div>
-    <footer>
-        <span>Copyright ...</span>
-    </footer>
+    </main>
 </body>
 </html>
