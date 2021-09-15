@@ -62,14 +62,10 @@ class AwesomeBooks {
     const form = document.getElementById('form');
 
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
       const titleInput = document.getElementById('book_title');
       const authorInput = document.getElementById('book_author');
       this.addBook(titleInput.value, authorInput.value);
       this.saveToLocalStorage();
-      titleInput.value = '';
-      authorInput.value = '';
-      window.location.reload();
     });
   }
 
