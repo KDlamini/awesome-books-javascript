@@ -23,22 +23,23 @@
     -->
 
     <main class="main-content d-flex">
-        <section id="List-section"> 
+        <section id="List-section" class="List-section d-flex"> 
             <h2>All awesome books</h2>
-            <table id="bookList">
+            <table id="bookList" class="book-table">
 
             </table>
+            <hr class="List-section-hr">
         </section>
 
-        <section id="Add-section" class="d-flex"> 
+        <section id="Add-section" class="Add-section d-flex"> 
             <h2>Add a new book</h2>
 
             <fieldset>
-                <form id="form" class="d-flex">
+                <form id="form" class="form d-flex">
                     <input class="form-item" type="text" required placeholder="Title" id="book_title">
                     <input class="form-item" type="text" required placeholder="Author" id="book_author">
 
-                    <input class="form-item" type="submit" value="Add" id="addButton">
+                    <input class="form-item addButton" type="submit" value="Add" id="addButton">
                 </form>
             </fieldset>
         </section>
