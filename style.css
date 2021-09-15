@@ -1,36 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
   margin: 0;
   padding: 0;
   background: #fff;
+  font-family: Poppins;
 }
 
+.table-entry div,
+.table-entry,
 .d-flex {
   display: flex;
 }
 
+.List-section ,
+.Add-section,
 .main-content {
   flex-direction: column;
   align-items: center;
+}
+
+.main-content {  
   justify-content: center;
   width: 100%;
   height: 100vh;
-  border: 1px solid red;
 }
 
-#Add-section {
-  flex-direction: column;
-  align-items: center;
+.List-section {
+  width: 50%;
 }
 
-#form {
+.book-table {
+  width: 100%;
+  display: flex;
   flex-direction: column;
+}
+
+.table-entry,
+.table-row {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.table-row:nth-child(even) {
+  background: #add8e6;
+}
+
+.table-entry {
+  margin: 1%;
+  width: 98%;
+}
+
+.table-entry div {
+  justify-content: space-between;
+  width: 40%;
+}
+
+.List-section-hr {
+  border: 1px solid #778899;
+  width: 40%;
+  margin-top: 20px;
+}
+
+.Add-section {
+  width: 40%;
+}
+
+fieldset {
+  border:  none;
+  width: 60%;
+}
+
+.form {
+  flex-direction: column;  
 }
 
 .form-item {
   margin: 5px 0;
 }
 
-#addButton {
+.addButton {
   width: 50px;
   align-self: flex-end;
 }
