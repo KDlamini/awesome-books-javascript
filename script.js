@@ -64,7 +64,7 @@ class AwesomeBooks {
   handleSubmit() {
     const form = document.getElementById('form');
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', () => {
       const titleInput = document.getElementById('book_title');
       const authorInput = document.getElementById('book_author');
       this.addBook(titleInput.value, authorInput.value);
