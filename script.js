@@ -36,9 +36,11 @@ class AwesomeBooks {
 
     this.bookArray.forEach((book) => {
       const tr = document.createElement('tr');
+      tr.className = 'table-row';
       const td = document.createElement('td');
+      td.className = 'table-entry';
 
-      td.innerHTML = `<span>${book.title}</span> by ${book.author}`;
+      td.innerHTML = `<div><span>${book.title}</span> by ${book.author} </div>`;
 
       const removeButton = document.createElement('button');
       removeButton.className = 'removeButton';
@@ -55,6 +57,7 @@ class AwesomeBooks {
       td.appendChild(removeButton);
       tr.appendChild(td);
       tableList.appendChild(tr);
+      tableList.style.border = '1px solid #778899';
     });
   }
 
