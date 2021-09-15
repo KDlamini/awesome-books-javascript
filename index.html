@@ -9,6 +9,7 @@
     <title>Awesome Books</title>
 </head>
 <body>
+    <!--
     <header>
         <h1>Awesome Books</h1>
         <nav>
@@ -19,8 +20,9 @@
             </ul>
         </nav>
     </header>    
-    
-    <div>
+    -->
+
+    <main class="main-content d-flex">
         <section id="List-section"> 
             <h2>All awesome books</h2>
             <table id="bookList">
@@ -28,21 +30,18 @@
             </table>
         </section>
 
-        <section id="Add-section"> 
+        <section id="Add-section" class="d-flex"> 
             <h2>Add a new book</h2>
 
             <fieldset>
-                <form id="form">
-                    <input type="text" required placeholder="Title" id="book_title">
-                    <input type="text" required placeholder="Author" id="book_author">
+                <form id="form" class="d-flex">
+                    <input class="form-item" type="text" required placeholder="Title" id="book_title">
+                    <input class="form-item" type="text" required placeholder="Author" id="book_author">
 
-                    <input type="submit" value="Add" id="addButton">
+                    <input class="form-item" type="submit" value="Add" id="addButton">
                 </form>
             </fieldset>
         </section>
-    </div>
-    <footer>
-        <span>Copyright ...</span>
-    </footer>
+    </main>
 </body>
 </html>

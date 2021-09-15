@@ -3,3 +3,34 @@ body {
   padding: 0;
   background: #fff;
 }
+
+.d-flex {
+  display: flex;
+}
+
+.main-content {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid red;
+}
+
+#Add-section {
+  flex-direction: column;
+  align-items: center;
+}
+
+#form {
+  flex-direction: column;
+}
+
+.form-item {
+  margin: 5px 0;
+}
+
+#addButton {
+  width: 50px;
+  align-self: flex-end;
+}
