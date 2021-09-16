@@ -72,13 +72,19 @@ class AwesomeBooks {
     });
   }
 
+  /* setDateStamp() {
+    this.dateTime = luxon.DateTime;
+    const timeP = document.querySelector('.current-time');
+    timeP.innerHTML = this.dateTime.now().toLocaleString(this.dateTime.DateTime.DATETIME_MED);
+  } */
+
   handleMenuList() {
-    const menuList = Array.from(document.querySelectorAll('.menu-item'));
+    this.menuList = Array.from(document.querySelectorAll('.menu-item'));
     const listSection = document.querySelector('.List-section');
     const addSection = document.querySelector('.Add-section');
     const contactSection = document.querySelector('.Contact-section');
 
-    menuList.forEach((menuItem) => {
+    this.menuList.forEach((menuItem) => {
       menuItem.addEventListener('click', () => {
         switch (menuItem.classList[1]) {
           case 'one':
@@ -117,4 +123,5 @@ const books = new AwesomeBooks();
 
 books.handleSubmit();
 books.handleMenuList();
+/* books.setDateStamp(); */
 books.reloadPage();
