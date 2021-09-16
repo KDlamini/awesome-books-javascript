@@ -72,11 +72,11 @@ class AwesomeBooks {
     });
   }
 
-  /* setDateStamp() {
-    this.dateTime = luxon.DateTime;
-    const timeP = document.querySelector('.current-time');
-    timeP.innerHTML = this.dateTime.now().toLocaleString(this.dateTime.DateTime.DATETIME_MED);
-  } */
+  setDateStamp() {
+    const DateTime = luxon.DateTime;
+    this.timeP = document.querySelector('.current-time');
+    this.timeP.innerHTML = fromISO(DateTime).toFormat('FF');
+  }
 
   handleMenuList() {
     this.menuList = Array.from(document.querySelectorAll('.menu-item'));
@@ -123,5 +123,5 @@ const books = new AwesomeBooks();
 
 books.handleSubmit();
 books.handleMenuList();
-/* books.setDateStamp(); */
+books.setDateStamp();
 books.reloadPage();

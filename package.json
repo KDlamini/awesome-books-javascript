@@ -28,7 +28,5 @@
     "stylelint-scss": "^3.20.1"
   },
   "dependencies": {
-    "luxon": "^2.0.2",
-    "require.js": "^1.0.0"
   }
 }
