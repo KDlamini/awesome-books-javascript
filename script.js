@@ -10,9 +10,13 @@ class AwesomeBooks {
     };
 
     let shouldAdd = true;
+    const InputTitle = booktitle.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase();
+
     if (booktitle && bookauthor) {
       this.bookArray.forEach((book) => {
-        if (book.title === booktitle) {
+        const bookArrayTittle = book.title.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase();
+
+        if (bookArrayTittle === InputTitle) {
           shouldAdd = false;
         }
       });
