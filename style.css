@@ -37,6 +37,7 @@ body {
 .menu-item:hover {
   color: #444;
   background: rgb(173, 216, 230, 0.4);
+  cursor: pointer;
 }
 
 .current-time {
