@@ -48,7 +48,7 @@ class AwesomeBooks {
       removeButton.innerHTML = 'Remove';
 
       removeButton.addEventListener('click', (e) => {
-        const title = e.target.parentNode.firstChild.textContent;
+        const title = e.target.parentNode.firstChild.firstChild.textContent;
         this.removeBook(title);
         this.saveToLocalStorage();
         window.location.reload();
