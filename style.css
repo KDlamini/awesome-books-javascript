@@ -47,7 +47,6 @@ body {
   padding: 0 20px;
 }
 
-.table-entry div,
 .table-entry,
 .d-flex {
   display: flex;
@@ -94,10 +93,6 @@ body {
 .table-entry div {
   justify-content: space-between;
   width: 40%;
-}
-
-.table-entry div span {
-  margin-right: 10px;
 }
 
 .removeButton {
