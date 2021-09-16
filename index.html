@@ -5,22 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
     <script defer src="./script.js"></script>
     <title>Awesome Books</title>
 </head>
 <body>
-    <!--
     <header>
-        <h1>Awesome Books</h1>
-        <nav>
-            <ul>
-                <li>List</li>
-                <li>Add new</li>
-                <li>Contact</li>
+        <nav class="navbar d-flex">
+            <h1>Awesome Books</h1>
+            <ul class="menu-list d-flex">
+                <li class="menu-item one">List</li>
+                <li class="menu-item two">Add new</li>
+                <li class="menu-item three">Contact</li>
             </ul>
         </nav>
-    </header>    
-    -->
+        <p class="current-time d-flex">Sept 16 2021, 12:18 PM</p>
+    </header>
 
     <main class="main-content d-flex">
         <section id="List-section" class="List-section d-flex"> 
@@ -43,6 +43,23 @@
                 </form>
             </fieldset>
         </section>
+
+        <section id="Contact-section" class="Contact-section d-flex"> 
+            <h2>Contact Information</h2>
+            <p>Do you have any questions or do you just want to say Hello? <br>
+                You can reach out to us!
+            </p>
+            <ul>
+                <li>Our email: <a href="mailto:simosakhenkosi@gmail.com">simosakhenkosi@gmail.com</a></li>
+                <li>Our phone number: +2348032784186</li>
+                <li>Our address: Streetname 22, 60050 Country Road, City</li>
+            </ul>
+        </section>
     </main>
+    <footer>
+        <div class="copyright-div"><p>Copyright   &nbsp; &nbsp; &nbsp;       ...</p></div>
+        <div class="slash-div"><span>//</span></div>
+    </footer>
+
 </body>
 </html>

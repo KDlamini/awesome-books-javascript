@@ -40,7 +40,7 @@ class AwesomeBooks {
       const td = document.createElement('td');
       td.className = 'table-entry';
 
-      td.innerHTML = `<div><span>${book.title}</span> by ${book.author} </div>`;
+      td.innerHTML = `<div><span>"${book.title}"</span> by ${book.author} </div>`;
 
       const removeButton = document.createElement('button');
       removeButton.className = 'removeButton';
@@ -72,6 +72,43 @@ class AwesomeBooks {
     });
   }
 
+  setDateStamp() {
+    const DateTime = luxon.DateTime; /* eslint-disable-line no-undef, prefer-destructuring */
+    this.timeP = document.querySelector('.current-time');
+    this.timeP.innerHTML = DateTime.now().toFormat('FF'); /* eslint-disable-line no-undef */
+  }
+
+  handleMenuList() {
+    this.menuList = Array.from(document.querySelectorAll('.menu-item'));
+    const listSection = document.querySelector('.List-section');
+    const addSection = document.querySelector('.Add-section');
+    const contactSection = document.querySelector('.Contact-section');
+
+    this.menuList.forEach((menuItem) => {
+      menuItem.addEventListener('click', () => {
+        switch (menuItem.classList[1]) {
+          case 'one':
+            listSection.style.display = 'flex';
+            addSection.style.display = 'none';
+            contactSection.style.display = 'none';
+            break;
+          case 'two':
+            listSection.style.display = 'none';
+            addSection.style.display = 'flex';
+            contactSection.style.display = 'none';
+            break;
+          case 'three':
+            listSection.style.display = 'none';
+            addSection.style.display = 'none';
+            contactSection.style.display = 'flex';
+            break;
+          default:
+            break;
+        }
+      });
+    });
+  }
+
   reloadPage() {
     window.onload = () => {
       if (localStorage.getItem('books') !== null) {
@@ -85,4 +122,6 @@ class AwesomeBooks {
 const books = new AwesomeBooks();
 
 books.handleSubmit();
+books.handleMenuList();
+books.setDateStamp();
 books.reloadPage();
