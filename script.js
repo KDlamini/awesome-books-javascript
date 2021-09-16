@@ -72,6 +72,37 @@ class AwesomeBooks {
     });
   }
 
+  handleMenuList() {
+    const menuList = Array.from(document.querySelectorAll('.menu-item'));
+    const listSection = document.querySelector('.List-section');
+    const addSection = document.querySelector('.Add-section');
+    const contactSection = document.querySelector('.Contact-section');
+
+    menuList.forEach((menuItem) => {
+      menuItem.addEventListener('click', () => {
+        switch (menuItem.classList[1]) {
+          case 'one':
+            listSection.style.display = 'flex';
+            addSection.style.display = 'none';
+            contactSection.style.display = 'none';
+            break;
+          case 'two':
+            listSection.style.display = 'none';
+            addSection.style.display = 'flex';
+            contactSection.style.display = 'none';
+            break;
+          case 'three':
+            listSection.style.display = 'none';
+            addSection.style.display = 'none';
+            contactSection.style.display = 'flex';
+            break;
+          default:
+            break;
+        }
+      });
+    });
+  }
+
   reloadPage() {
     window.onload = () => {
       if (localStorage.getItem('books') !== null) {
@@ -85,4 +116,5 @@ class AwesomeBooks {
 const books = new AwesomeBooks();
 
 books.handleSubmit();
+books.handleMenuList();
 books.reloadPage();
