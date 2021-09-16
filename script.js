@@ -40,7 +40,7 @@ class AwesomeBooks {
       const td = document.createElement('td');
       td.className = 'table-entry';
 
-      td.innerHTML = `<div><span>${book.title}</span> by ${book.author} </div>`;
+      td.innerHTML = `<div><span>"${book.title}"</span> by ${book.author} </div>`;
 
       const removeButton = document.createElement('button');
       removeButton.className = 'removeButton';
