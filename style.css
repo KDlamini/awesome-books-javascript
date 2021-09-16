@@ -59,7 +59,7 @@ body {
 
 .main-content {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
 }
 
 .List-section {
@@ -135,4 +135,28 @@ fieldset {
 
 .Contact-section {
   display: none;
+  flex-direction: column;
+}
+
+.Contact-section h2 {
+  align-self: center;
+}
+
+.Contact-section ul a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.copyright-div {
+  margin: 0 10px 5px 10px;
+  padding: 0 20px;
+  border: 1px solid #789;
+}
+
+.slash-div {
+  height: 50%;
+  border: 1px solid;
+  background: #789;
+  text-align: right;
+  padding: 0 10px;
 }
