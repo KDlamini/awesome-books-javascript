@@ -73,9 +73,9 @@ class AwesomeBooks {
   }
 
   setDateStamp() {
-    const DateTime = luxon.DateTime;
+    const DateTime = luxon.DateTime; /* eslint-disable-line no-undef, prefer-destructuring */
     this.timeP = document.querySelector('.current-time');
-    this.timeP.innerHTML = fromISO(DateTime).toFormat('FF');
+    this.timeP.innerHTML = DateTime.now().toFormat('FF'); /* eslint-disable-line no-undef */
   }
 
   handleMenuList() {
